@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="94">
+    <author>Jos</author>
+    <version>1.0.0.0</version>
+    <title>
+        <en>Farm Vehicle Shop</en>
+        <de>Hof Maschinen Händler</de>
+    </title>
+    <description>
+        <en><![CDATA[Place this workshop and vehicle dealer in one at your farm to repair, buy, or sell vehicles/tools/pallet/etc directly at your farm.
+
+One building allowed per farm, this works on multiplayer.
+NOTE: Resetting an item on games hosted on a dedicated server reset to the original map vehicle shop.
+
+Farm Vehicle Shop
+Category: Placeables > Tools
+Price: $5,000
+Monthly upkeep: $100
+Configurations: Size
+]]>
+        </en>
+        <de><![CDATA[Platzieren Sie diese Werkstatt und den Fahrzeughändler in einem auf Ihrer Farm, um Fahrzeuge/Werkzeuge/Paletten/usw. direkt auf Ihrer Farm zu reparieren, zu kaufen oder zu verkaufen.
+
+Pro Farm ist ein Gebäude erlaubt, dies funktioniert im Mehrspielermodus.
+HINWEIS: Durch das Zurücksetzen eines Elements bei Spielen, die auf einem dedizierten Server gehostet werden, wird der Fahrzeugshop der ursprünglichen Karte zurückgesetzt.
+
+Hof Maschinen Händler
+Shopkategorie: Geräte
+Preis: 5.000€
+Monatliche Unterhaltskosten: 100€
+Konfigurationen: Größe
+]]>
+        </de>
+    </description>
+    <iconFilename>icon_FarmVehicleShop.dds</iconFilename>
+    <multiplayer supported="true" />
+    <l10n filenamePrefix="l10n/l10n"/>
+    <placeableSpecializations>
+        <specialization name="vehicleSpawner" className="PlaceableVehicleSpawner" filename="src/PlaceableVehicleSpawner.lua" />
+    </placeableSpecializations>
+    <placeableTypes>
+        <type name="farmVehicleShop" parent="workshop" filename="$dataS/scripts/placeables/Placeable.lua">
+            <specialization name="vehicleSpawner" />
+        </type>
+    </placeableTypes>
+    <storeItems>
+        <storeItem xmlFilename="xml/farmVehicleShop.xml" />
+    </storeItems>
+    <extraSourceFiles>
+        <sourceFile filename="src/main.lua" />
+    </extraSourceFiles>
+</modDesc>

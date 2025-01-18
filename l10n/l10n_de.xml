@@ -1,0 +1,7 @@
+<l10n>
+    <elements>
+        <e k="shopItem_farmVehicleShop" v="Hof Maschinen Händler"/>
+        <e k="function_farmVehicleShop" v="Reparieren, kaufen und verkaufen Sie Fahrzeuge und Werkzeuge direkt auf Ihrer Farm."/>
+        <e k="configuration_size" v="Größe" />
+    </elements>
+</l10n>

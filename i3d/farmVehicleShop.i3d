@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="farmVehicleShop.i3d" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="10.0.3"/>
+  </Asset>
+
+  <Files>
+    <File fileId="5" filename="$data/maps/mapEU/textures/buildings/receptionHouse/receptionHouse_mask.png"/>
+    <File fileId="11" filename="$data/maps/mapEU/textures/buildings/smallGroceryStore/smallGroceryStoreWindows_diffuse.png"/>
+    <File fileId="12" filename="$data/maps/mapEU/textures/buildings/smallGroceryStore/smallGroceryStoreWindows_normal.png"/>
+    <File fileId="13" filename="$data/maps/mapEU/textures/buildings/smallGroceryStore/smallGroceryStoreWindows_specular.png"/>
+    <File fileId="1" filename="$data/maps/mapEU/textures/buildings/smallGroceryStore/smallGroceryStore_diffuse.png"/>
+    <File fileId="30" filename="$data/maps/mapEU/textures/buildings/smallGroceryStore/smallGroceryStore_height.png"/>
+    <File fileId="2" filename="$data/maps/mapEU/textures/buildings/smallGroceryStore/smallGroceryStore_normal.png"/>
+    <File fileId="3" filename="$data/maps/mapEU/textures/buildings/smallGroceryStore/smallGroceryStore_specular.png"/>
+    <File fileId="20" filename="$data/maps/mapEU/textures/buildings/smallKiosk/smallKioskGoods_diffuse.png"/>
+    <File fileId="21" filename="$data/maps/mapEU/textures/buildings/smallKiosk/smallKioskGoods_normal.png"/>
+    <File fileId="22" filename="$data/maps/mapEU/textures/buildings/smallKiosk/smallKioskGoods_specular.png"/>
+    <File fileId="6" filename="$data/maps/mapEU/textures/dirtDark_diffuse.png"/>
+    <File fileId="7" filename="$data/maps/mapEU/textures/dirtGreen_diffuse.png"/>
+    <File fileId="32" filename="$data/maps/mapEU/textures/props/parkingLines_diffuse.dds"/>
+    <File fileId="33" filename="$data/maps/mapEU/textures/props/parkingLines_normal.dds"/>
+    <File fileId="34" filename="$data/maps/mapEU/textures/props/parkingLines_specular.dds"/>
+    <File fileId="17" filename="$data/maps/mapEU/textures/rainGutters_diffuse.png"/>
+    <File fileId="18" filename="$data/maps/mapEU/textures/rainGutters_normal.png"/>
+    <File fileId="19" filename="$data/maps/mapEU/textures/rainGutters_specular.png"/>
+    <File fileId="14" filename="$data/maps/mapEU/textures/windowsGlass_diffuse.png"/>
+    <File fileId="15" filename="$data/maps/mapEU/textures/windowsGlass_normal.png"/>
+    <File fileId="16" filename="$data/maps/mapEU/textures/windowsGlass_specular.png"/>
+    <File fileId="23" filename="$data/maps/textures/shared/props/icicles_diffuse.png"/>
+    <File fileId="24" filename="$data/maps/textures/shared/props/icicles_normal.png"/>
+    <File fileId="25" filename="$data/maps/textures/shared/props/icicles_specular.png"/>
+    <File fileId="28" filename="$data/maps/textures/shared/snow_diffuse.png"/>
+    <File fileId="29" filename="$data/maps/textures/shared/snow_normal.png"/>
+    <File fileId="8" filename="$data/maps/textures/shared/snow_specular.png"/>
+    <File fileId="4" filename="$data/shaders/buildingShader.xml"/>
+    <File fileId="35" filename="$data/shaders/decalShader.xml"/>
+    <File fileId="38" filename="$data/shaders/glowShader.xml"/>
+    <File fileId="26" filename="$data/shaders/snowHeapShader.xml"/>
+    <File fileId="37" filename="$data/shared/assets/marker/markerIcons_diffuse.png"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="icicles_mat" materialId="5" alphaBlending="true" customShaderId="26" customShaderVariation="icicle">
+      <Texture fileId="23"/>
+      <Normalmap fileId="24"/>
+      <Glossmap fileId="25"/>
+    </Material>
+    <Material name="lambert1" materialId="6" diffuseColor="0.494118 0.494118 0.494118 1">
+    </Material>
+    <Material name="lambert1" materialId="7" diffuseColor="0.501961 0.501961 0.501961 1">
+    </Material>
+    <Material name="markerIcons_mat" materialId="8" alphaBlending="true" customShaderId="38" customShaderVariation="additive_billboard_pulsating">
+      <Emissivemap fileId="37"/>
+      <CustomParameter name="lightControl" value="0.25"/>
+    </Material>
+    <Material name="parkingLines_mat" materialId="9" alphaBlending="true" customShaderId="35">
+      <Texture fileId="32"/>
+      <Normalmap fileId="33"/>
+      <Glossmap fileId="34"/>
+    </Material>
+    <Material name="rainGutters_mat" materialId="10">
+      <Texture fileId="17"/>
+      <Normalmap fileId="18"/>
+      <Glossmap fileId="19"/>
+    </Material>
+    <Material name="smallGroceryStore_mat" materialId="11" customShaderId="4" customShaderVariation="customParallax">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+      <Custommap name="mMaskMap" fileId="5"/>
+      <Custommap name="mDirtDiffuse" fileId="6"/>
+      <Custommap name="mMossDiffuse" fileId="7"/>
+      <Custommap name="mParallaxMap" fileId="30"/>
+    </Material>
+    <Material name="smallGroceryStore_mat" materialId="12" customShaderId="4" customShaderVariation="customParallax">
+      <Texture fileId="1"/>
+      <Normalmap fileId="2"/>
+      <Glossmap fileId="3"/>
+      <Custommap name="mMaskMap" fileId="5"/>
+      <Custommap name="mDirtDiffuse" fileId="6"/>
+      <Custommap name="mMossDiffuse" fileId="7"/>
+      <CustomParameter name="placeableColorScale" value="0 0 0 0"/>
+    </Material>
+    <Material name="smallGroceryStoreWindows_mat" materialId="13">
+      <Texture fileId="11"/>
+      <Normalmap fileId="12"/>
+      <Glossmap fileId="13"/>
+    </Material>
+    <Material name="smallKioskGoods_mat" materialId="14">
+      <Texture fileId="20"/>
+      <Normalmap fileId="21"/>
+      <Glossmap fileId="22"/>
+    </Material>
+    <Material name="snow_mat" materialId="15" customShaderId="26">
+      <Texture fileId="28"/>
+      <Normalmap fileId="29" bumpDepth="0.5"/>
+      <Glossmap fileId="8"/>
+    </Material>
+    <Material name="windowsGlass_mat" materialId="16" alphaBlending="true">
+      <Texture fileId="14"/>
+      <Normalmap fileId="15"/>
+      <Glossmap fileId="16"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="farmVehicleShop.i3d.shapes">
+  </Shapes>
+
+  <Scene>
+    <TransformGroup name="farmVehicleShop" clipDistance="250" nodeId="33">
+      <TransformGroup name="visuals" nodeId="34">
+        <TransformGroup name="visual_lod" translation="-14 0 0" rotation="0 90 0" lodDistance="0 65" nodeId="35">
+          <TransformGroup name="LOD0" nodeId="36">
+            <Shape name="building" shapeId="1" nodeId="37" castsShadows="true" receiveShadows="true" materialIds="12"/>
+            <Shape name="frames" shapeId="2" nodeId="38" castsShadows="true" receiveShadows="true" materialIds="13"/>
+            <Shape name="glass" shapeId="3" nodeId="39" castsShadows="true" receiveShadows="true" materialIds="16"/>
+            <Shape name="rainGutters" shapeId="4" nodeId="40" castsShadows="true" receiveShadows="true" materialIds="10"/>
+            <Shape name="smallGroceryStoreGoods" shapeId="5" nodeId="41" castsShadows="true" receiveShadows="true" materialIds="14"/>
+            <TransformGroup name="seasons" nodeId="42" weatherRequiredMask="0x400">
+              <TransformGroup name="winter" nodeId="43" weatherRequiredMask="0x400">
+                <Shape name="icicles" shapeId="6" nodeId="44" castsShadows="true" receiveShadows="true" materialIds="5" weatherRequiredMask="0x400"/>
+                <Shape name="snow" shapeId="7" nodeId="45" castsShadows="true" receiveShadows="true" materialIds="15" weatherRequiredMask="0x400"/>
+              </TransformGroup>
+            </TransformGroup>
+          </TransformGroup>
+          <TransformGroup name="LOD1" nodeId="46">
+            <Shape name="receptionHouse_windows" shapeId="8" nodeId="47" castsShadows="true" receiveShadows="true" materialIds="13"/>
+            <Shape name="receptionHouse" shapeId="9" nodeId="48" castsShadows="true" receiveShadows="true" materialIds="11"/>
+          </TransformGroup>
+          <Shape name="collision" shapeId="10" static="true" collisionFilterGroup="0x103c" collisionFilterMask="0xfffffbff" nodeId="49" castsShadows="true" receiveShadows="true" nonRenderable="true" materialIds="7"/>
+        </TransformGroup>
+        <TransformGroup name="parkingLines" translation="0 0.02 0" nodeId="50">
+          <Shape name="parkingLineLeft" translation="-10 0 0" shapeId="11" clipDistance="300" nodeId="51" castsShadows="false" receiveShadows="true" materialIds="9"/>
+          <Shape name="parkingLineRight" shapeId="11" clipDistance="300" nodeId="52" castsShadows="false" receiveShadows="true" materialIds="9"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="testAreas" nodeId="53">
+        <TransformGroup name="testAreaStart01" translation="-10 0 -3" nodeId="54">
+          <TransformGroup name="testAreaEnd01" translation="10 2 6" nodeId="55"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="clearAreas" nodeId="56">
+        <TransformGroup name="clearAreaStart01" translation="-16.6 0 -2.8" nodeId="57">
+          <TransformGroup name="clearAreaWidth01" translation="0 0 5.6" nodeId="58"/>
+          <TransformGroup name="clearAreaHeight01" translation="5 0 0" nodeId="59"/>
+        </TransformGroup>
+        <TransformGroup name="clearAreaStart02" translation="-10 0 -3" nodeId="60">
+          <TransformGroup name="clearAreaWidth02" translation="0 0 6" nodeId="61"/>
+          <TransformGroup name="clearAreaHeight02" translation="10 0 0" nodeId="62"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="indoorAreas" nodeId="63">
+        <TransformGroup name="indoorAreaStart01" translation="-16.5 0 -3" nodeId="64">
+          <TransformGroup name="indoorAreaWidth01" translation="0 0 6" nodeId="65"/>
+          <TransformGroup name="indoorAreaHeight01" translation="16.5 0 0" nodeId="66"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="tipOcclusionUpdateAreas" nodeId="67">
+        <TransformGroup name="tipOcclusionUpdateAreaStart01" translation="-10 0 -3" nodeId="68">
+          <TransformGroup name="tipOcclusionUpdateAreaEnd01" translation="10 0 6" nodeId="69"/>
+        </TransformGroup>
+      </TransformGroup>
+      <TransformGroup name="workshop" nodeId="70">
+        <Shape name="vehicleTrigger" shapeId="12" static="true" trigger="true" collisionFilterGroup="0x20000000" collisionFilterMask="0x10000" clipDistance="300" nodeId="71" castsShadows="true" receiveShadows="true" nonRenderable="true" materialIds="7"/>
+        <TransformGroup name="markerWrench" translation="-11 0 -1.5" nodeId="72"/>
+        <Shape name="playerTrigger" translation="-11 0 -1.5" rotation="0 -90 0" shapeId="13" static="true" trigger="true" collisionFilterGroup="0x20000000" collisionFilterMask="0x110000" clipDistance="300" nodeId="73" castsShadows="true" receiveShadows="true" nonRenderable="true" materialIds="7"/>
+        <Shape name="vehicleShopTrigger" translation="-11 0 1.5" shapeId="14" static="true" trigger="true" collisionFilterGroup="0x20000000" collisionFilterMask="0x100000" nodeId="74" castsShadows="true" receiveShadows="true" nonRenderable="true" materialIds="6">
+          <TransformGroup name="markerIconShopping" nodeId="75">
+            <Shape name="iconShopping" translation="0 1 0" shapeId="15" clipDistance="300" nodeId="76" castsShadows="true" receiveShadows="true" materialIds="8"/>
+            <Light name="pointLight" translation="0 1 0" clipDistance="100" nodeId="77" type="point" color="0.417119 0.506314 0.0445976" emitDiffuse="true" emitSpecular="true" range="1.5"/>
+          </TransformGroup>
+          <TransformGroup name="vehicleShopPlayerSpawn" rotation="0 -90 -2.30303e-08" nodeId="78"/>
+        </Shape>
+      </TransformGroup>
+      <TransformGroup name="vehicleSpawnAreas" nodeId="79">
+        <TransformGroup name="vehicleSpawnAreaStart01" translation="-10 0 0" nodeId="80">
+          <TransformGroup name="vehicleSpawnAreaEnd01" translation="10 0 0" nodeId="81"/>
+        </TransformGroup>
+        <TransformGroup name="vehicleSpawnAreaStart02" translation="-10 0 0" nodeId="82">
+          <TransformGroup name="vehicleSpawnAreaEnd02" translation="1 0 0" nodeId="83"/>
+        </TransformGroup>
+      </TransformGroup>
+    </TransformGroup>
+  </Scene>
+
+</i3D>

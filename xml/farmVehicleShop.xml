@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<placeable type="farmVehicleShop" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://validation.gdn.giants-software.com/xml/fs25/placeable.xsd">
+    <storeData>
+        <name>$l10n_shopItem_farmVehicleShop</name>
+        <image>store/store_farmVehicleShop.dds</image>
+        <price>5000</price>
+        <functions>
+            <function>$l10n_function_farmVehicleShop</function>
+        </functions>
+        <showInStore>true</showInStore>
+        <lifetime>1000</lifetime>
+        <rotation>0</rotation>
+        <brand>NONE</brand>
+        <dailyUpkeep>100</dailyUpkeep>
+        <species>PLACEABLE</species>
+        <category>placeableMisc</category>
+        <maxItemCount>1</maxItemCount>
+        <brush>
+            <type>placeable</type>
+            <category>buildings</category>
+            <tab>tools</tab>
+        </brush>
+    </storeData>
+
+    <base>
+        <filename>i3d/farmVehicleShop.i3d</filename>
+        <boughtWithFarmland>true</boughtWithFarmland>
+        <canBeRenamed>true</canBeRenamed>
+        <canBeDeleted>true</canBeDeleted>
+    </base>
+
+    <placement useRandomYRotation="false" useManualYRotation="true" >
+        <testAreas>
+            <testArea startNode="testAreaStart01" endNode="testAreaEnd01" />
+        </testAreas>
+
+        <sounds>
+            <place template="smallImp"/>
+        </sounds>
+    </placement>
+
+    <clearAreas>
+        <clearArea startNode="clearAreaStart01" widthNode="clearAreaWidth01" heightNode="clearAreaHeight01"/>
+        <clearArea startNode="clearAreaStart02" widthNode="clearAreaWidth02" heightNode="clearAreaHeight02"/>
+    </clearAreas>
+
+    <leveling requireLeveling="true" maxSmoothDistance="1" maxSlope="75" maxEdgeAngle="30">
+        <levelAreas>
+            <levelArea startNode="clearAreaStart01" widthNode="clearAreaWidth01" heightNode="clearAreaHeight01" groundType="DIRT" />
+            <levelArea startNode="clearAreaStart02" widthNode="clearAreaWidth02" heightNode="clearAreaHeight02" groundType="ASPHALT" />
+        </levelAreas>
+
+    </leveling>
+
+    <indoorAreas>
+        <indoorArea startNode="indoorAreaStart01" widthNode="indoorAreaWidth01" heightNode="indoorAreaHeight01"/>
+    </indoorAreas>
+
+    <ai>
+        <updateAreas>
+            <updateArea startNode="tipOcclusionUpdateAreaStart01" endNode="tipOcclusionUpdateAreaEnd01"/>
+        </updateAreas>
+    </ai>
+
+    <tipOcclusionUpdateAreas>
+        <tipOcclusionUpdateArea startNode="tipOcclusionUpdateAreaStart01" endNode="tipOcclusionUpdateAreaEnd01" />
+    </tipOcclusionUpdateAreas>
+
+    <hotspots>
+        <hotspot type="SHOP" linkNode="vehicleTrigger" teleportNode="playerTrigger" />
+    </hotspots>
+
+    <triggerMarkers>
+        <triggerMarker node="markerWrench" filename="$data/shared/assets/marker/markerIconWrench.i3d" adjustToGround="true" showOnlyIfOwned="true" />
+    </triggerMarkers>
+
+    <workshop>
+        <sellingPoint playerTriggerNode="playerTrigger" iconNode="markerWrench" sellTriggerNode="vehicleTrigger" ownWorkshop="false" mobileWorkshop="false" />
+    </workshop>
+
+    <vehicleSpawnAreas shopTriggerNode="vehicleShopTrigger">
+        <vehicleSpawnArea startNode="vehicleSpawnAreaStart01" endNode="vehicleSpawnAreaEnd01" />
+        <vehicleSpawnArea startNode="vehicleSpawnAreaStart02" endNode="vehicleSpawnAreaEnd02" />
+    </vehicleSpawnAreas>
+
+    <solarPanels>
+        <solarPanelsConfigurations title="$l10n_configuration_size">
+            <solarPanelsConfiguration name="$l10n_configuration_valueSmall" isDefault="true" />
+
+            <solarPanelsConfiguration name="$l10n_configuration_valueDefault">
+                <objectChange node="parkingLineRight" translationActive="10 0 0" />
+                <objectChange node="testAreaEnd01" translationActive="20 2 6" />
+                <objectChange node="clearAreaHeight02" translationActive="20 0 0" />
+                <objectChange node="indoorAreaHeight01" translationActive="26.5 0 0" />
+                <objectChange node="tipOcclusionUpdateAreaEnd01" translationActive="20 0 6" />
+                <objectChange node="vehicleTrigger" translationActive="10 0 0" scaleActive="2 1 1" />
+                <objectChange node="vehicleSpawnAreaEnd01" translationActive="20 0 0" />
+            </solarPanelsConfiguration>
+
+            <solarPanelsConfiguration name="$l10n_configuration_valueBig">
+                <objectChange node="parkingLineLeft" scaleActive="1 1 2" />
+                <objectChange node="parkingLineRight" scaleActive="1 1 2" translationActive="10 0 0" />
+
+                <objectChange node="testAreaStart01" translationActive="-10 0 -6" />
+                <objectChange node="testAreaEnd01" translationActive="20 2 12" />
+
+                <objectChange node="clearAreaStart02" translationActive="-10 0 -6" />
+                <objectChange node="clearAreaWidth02" translationActive="0 0 12" />
+                <objectChange node="clearAreaHeight02" translationActive="20 0 0" />
+
+                <objectChange node="indoorAreaStart01" translationActive="-16.5 0 -6" />
+                <objectChange node="indoorAreaWidth01" translationActive="0 0 12" />
+                <objectChange node="indoorAreaHeight01" translationActive="26.5 0 0" />
+
+                <objectChange node="tipOcclusionUpdateAreaStart01" translationActive="-10 0 -6" />
+                <objectChange node="tipOcclusionUpdateAreaEnd01" translationActive="20 2 12" />
+
+                <objectChange node="vehicleTrigger" translationActive="10 0 0" scaleActive="2 1 2" />
+
+                <objectChange node="vehicleSpawnAreaStart01" translationActive="-10 0 -5" />
+                <objectChange node="vehicleSpawnAreaEnd01" translationActive="20 0 0" />
+                <objectChange node="vehicleSpawnAreaStart02" translationActive="-10 0 5" />
+                <objectChange node="vehicleSpawnAreaEnd02" translationActive="20 0 0" />
+            </solarPanelsConfiguration>
+        </solarPanelsConfigurations>
+    </solarPanels>
+
+    <i3dMappings>
+        <i3dMapping id="farmVehicleShop" node="0>" />
+        <i3dMapping id="parkingLines" node="0>0|1" />
+        <i3dMapping id="parkingLineLeft" node="0>0|1|0" />
+        <i3dMapping id="parkingLineRight" node="0>0|1|1" />
+        <i3dMapping id="testAreas" node="0>1" />
+        <i3dMapping id="testAreaStart01" node="0>1|0" />
+        <i3dMapping id="testAreaEnd01" node="0>1|0|0" />
+        <i3dMapping id="clearAreas" node="0>2" />
+        <i3dMapping id="clearAreaStart01" node="0>2|0" />
+        <i3dMapping id="clearAreaWidth01" node="0>2|0|0" />
+        <i3dMapping id="clearAreaHeight01" node="0>2|0|1" />
+        <i3dMapping id="clearAreaStart02" node="0>2|1" />
+        <i3dMapping id="clearAreaWidth02" node="0>2|1|0" />
+        <i3dMapping id="clearAreaHeight02" node="0>2|1|1" />
+        <i3dMapping id="indoorAreas" node="0>3" />
+        <i3dMapping id="indoorAreaStart01" node="0>3|0" />
+        <i3dMapping id="indoorAreaWidth01" node="0>3|0|0" />
+        <i3dMapping id="indoorAreaHeight01" node="0>3|0|1" />
+        <i3dMapping id="tipOcclusionUpdateAreas" node="0>4" />
+        <i3dMapping id="tipOcclusionUpdateAreaStart01" node="0>4|0" />
+        <i3dMapping id="tipOcclusionUpdateAreaEnd01" node="0>4|0|0" />
+        <i3dMapping id="workshop" node="0>5" />
+        <i3dMapping id="vehicleTrigger" node="0>5|0" />
+        <i3dMapping id="markerWrench" node="0>5|1" />
+        <i3dMapping id="playerTrigger" node="0>5|2" />
+        <i3dMapping id="vehicleShopTrigger" node="0>5|3" />
+        <i3dMapping id="vehicleSpawnAreaStart01" node="0>6|0" />
+        <i3dMapping id="vehicleSpawnAreaEnd01" node="0>6|0|0" />
+        <i3dMapping id="vehicleSpawnAreaStart02" node="0>6|1" />
+        <i3dMapping id="vehicleSpawnAreaEnd02" node="0>6|1|0" />
+    </i3dMappings>
+</placeable>

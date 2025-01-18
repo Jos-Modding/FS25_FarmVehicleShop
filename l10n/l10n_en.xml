@@ -1,0 +1,7 @@
+<l10n>
+    <elements>
+        <e k="shopItem_farmVehicleShop" v="Farm Vehicle Shop" />
+        <e k="function_farmVehicleShop" v="Repair, buy, and sell vehicles and tools directly at your farm." />
+        <e k="configuration_size" v="Size" />
+    </elements>
+</l10n>
