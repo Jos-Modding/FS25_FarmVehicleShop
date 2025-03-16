@@ -1,4 +1,5 @@
 .idea
-.git
+_*
 *.md
-*.txt
+!README.md
+*.zip

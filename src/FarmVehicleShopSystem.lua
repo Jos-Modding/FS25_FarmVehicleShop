@@ -1,5 +1,6 @@
 FarmVehicleShopSystem = {}
 local FarmVehicleShopSystem_mt = Class(FarmVehicleShopSystem)
+source(g_currentModDirectory .. "src/FarmVehicleResetEvent.lua")
 
 ---
 function FarmVehicleShopSystem.new(mission, modDirectory, modName)
@@ -14,6 +15,7 @@ end
 
 -- @param table farmVehicleShop
 function FarmVehicleShopSystem:addFarmVehicleShop(farmVehicleShop)
+
     table.insert(self.farmVehicleShops, farmVehicleShop)
 end
 
@@ -31,6 +33,10 @@ function FarmVehicleShopSystem:getFarmVehicleShopByFarmId(farmId)
     end
 
     return nil
+end
+
+function FarmVehicleShopSystem:setActiveFarmVehicleShop(farmId)
+    local shop = g_farmVehicleShopSystem:getFarmVehicleShopByFarmId(farmId)
 end
 
 -- @see shop/BuyVehicleData:buy
@@ -60,8 +66,8 @@ end
 function FarmVehicleShopSystem.getResetPlaces(mission, ...)
     local places = {}
 
-    if g_localPlayer ~= nil then
-        local farmVehicleShop = g_farmVehicleShopSystem:getFarmVehicleShopByFarmId(g_localPlayer.farmId)
+    if mission.farmVehicleShop ~= nil then
+        local farmVehicleShop = g_farmVehicleShopSystem:getFarmVehicleShopByFarmId(mission.farmVehicleShop or 0)
 
         if farmVehicleShop ~= nil then
             for _, place in ipairs(farmVehicleShop.vehicleSpawnPlaces) do
@@ -75,5 +81,20 @@ function FarmVehicleShopSystem.getResetPlaces(mission, ...)
         table.insert(places, place)
     end
 
+    -- Reset farmId
+    g_client:getServerConnection():sendEvent(FarmVehicleResetEvent.new(0))
+
     return places
+end
+
+function FarmVehicleShopSystem.onYesNoReset(self, yes)
+    if yes then
+        if self.currentHotspot ~= nil then
+            local vehicle = InGameMenuMapUtil.getHotspotVehicle(self.currentHotspot)
+
+            if vehicle ~= nil then
+                g_client:getServerConnection():sendEvent(FarmVehicleResetEvent.new(vehicle.ownerFarmId))
+            end
+        end
+    end
 end

@@ -19,6 +19,7 @@ local function init()
     Mission00.load = Utils.prependedFunction(Mission00.load, load)
     BuyVehicleData.buy = Utils.overwrittenFunction(BuyVehicleData.buy, FarmVehicleShopSystem.onBuyVehicleEvent)
     BaseMission.getResetPlaces = Utils.overwrittenFunction(BaseMission.getResetPlaces, FarmVehicleShopSystem.getResetPlaces)
+    InGameMenuMapFrame.onYesNoReset = Utils.prependedFunction(InGameMenuMapFrame.onYesNoReset, FarmVehicleShopSystem.onYesNoReset)
 end
 
 init()
