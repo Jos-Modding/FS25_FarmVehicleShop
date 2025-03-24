@@ -111,7 +111,7 @@
   </Shapes>
 
   <Scene>
-    <TransformGroup name="farmVehicleShop" clipDistance="250" nodeId="33">
+    <TransformGroup name="farmVehicleShop" clipDistance="300" nodeId="33">
       <TransformGroup name="visuals" nodeId="34">
         <TransformGroup name="visual_lod" translation="-14 0 0" rotation="0 90 0" lodDistance="0 65" nodeId="35">
           <TransformGroup name="LOD0" nodeId="36">
@@ -171,7 +171,7 @@
         <Shape name="vehicleShopTrigger" translation="-11 0 1.5" shapeId="14" static="true" trigger="true" collisionFilterGroup="0x20000000" collisionFilterMask="0x100000" nodeId="74" castsShadows="true" receiveShadows="true" nonRenderable="true" materialIds="6">
           <TransformGroup name="markerIconShopping" nodeId="75">
             <Shape name="iconShopping" translation="0 1 0" shapeId="15" clipDistance="300" nodeId="76" castsShadows="true" receiveShadows="true" materialIds="8"/>
-            <Light name="pointLight" translation="0 1 0" clipDistance="100" nodeId="77" type="point" color="0.417119 0.506314 0.0445976" emitDiffuse="true" emitSpecular="true" range="1.5"/>
+            <Light name="pointLight" translation="0 1 0" clipDistance="300" nodeId="77" type="point" color="0.417119 0.506314 0.0445976" emitDiffuse="true" emitSpecular="true" range="1.5"/>
           </TransformGroup>
           <TransformGroup name="vehicleShopPlayerSpawn" rotation="0 -90 -2.30303e-08" nodeId="78"/>
         </Shape>
